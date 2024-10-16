@@ -1,0 +1,48 @@
+.toolbar {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    border: 1px solid gray;
+    padding: 3px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding-right: 6px;
+}
+
+.toolbar-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.toolbar button {
+    /* background-color: white; */
+    border: none;
+    /* color: black; */
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toolbar button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.toolbar button:hover:not(:disabled) {
+    background-color: gray;
+}
+
+.toolbar i {
+    font-size: 16px;
+}
+
+.toolbar span {
+    font-size: 16px;
+    /* color: #333; */
+}

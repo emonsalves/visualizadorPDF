@@ -1,0 +1,132 @@
+.pdf-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.pdf-viewer {
+    display: flex;
+    height: calc(100vh - 80px);
+}
+
+.thumbnail-panel {
+    width: 200px;
+    overflow-y: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.thumbnail {
+    margin-bottom: 10px;
+    cursor: pointer;
+    border: #d4d0d0 2px solid;
+}
+
+.thumbnail.active {
+    border: 2px solid #007bff;
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.pdf-rotate {
+    display: flex;
+}
+
+.pdf-content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow-y: auto;
+    /* Scroll solo en el eje Y */
+    max-height: 100vh;
+    /* Limitar la altura al 100% del viewport */
+}
+
+.pdf-page {
+    /* background-color: white; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.pdf-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+#download {
+    cursor: pointer;
+}
+
+#download:hover {
+    color: #007bff;
+}
+
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+    z-index: 20;
+}
+
+.react-pdf__Page__textContent
+{
+    z-index: 5;
+}
+.react-pdf__Page__textLayer {
+    z-index: 10;
+    pointer-events: auto; 
+}
+
+.react-pdf__Page__canvas {
+    z-index: 1;
+}
+
+@media print {
+    @page {
+        margin: 0;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    .pdf-navbar,
+    .toolbar,
+    .toolbarLat,
+    .back-link,
+    .thumbnail-panel {
+        display: none;
+    }
+
+    .main-content {
+        height: 100%;
+        overflow: visible;
+    }
+
+    .pdf-rotate {
+        display: flex;
+    }
+
+    .pdf-content {
+        height: auto;
+        overflow: visible;
+    }
+
+    .pdf-page {
+        page-break-after: always;
+        margin: 0;
+        padding: 0;
+    }
+}
